@@ -12,7 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require bootstrap
-//= require bootstrap-editable
-//= require bootstrap-editable-rails
 //= require_tree .
+$(document).ready(function(){
+  $("#search-input").typeahead({
+    name: 'email',
+    remote: {
+        url: '/lookup?q=%QUERY',        
+        template: '<p><strong>{{email}}</strong></p>',
+        engine: Hogan
+      }
+});
+ })

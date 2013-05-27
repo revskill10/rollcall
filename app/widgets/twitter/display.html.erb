@@ -1,0 +1,15 @@
+<%= widget_div do %>
+  <h1>
+    Posts
+  </h1>
+	
+    <% for p in @posts %>
+		<li><%= p.title %><br />
+			<%= raw p.body %>
+		</li>	
+    <% end %>
+</ul>
+  </p>
+  <%= will_paginate @posts %>
+  <input type="text" id="search-input" />
+<% end %>

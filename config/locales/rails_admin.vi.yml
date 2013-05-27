@@ -1,0 +1,15 @@
+vi:  
+  datetime:
+    distance_in_words:
+      x_days: "%{count} ngày"
+      about_x_days: "%{count} ngày"
+      less_than_x_days: "%{count} ngày"
+      x_hours: "%{count} giờ"
+      about_x_hours: "%{count} giờ"
+      less_than_x_hours: "%{count} giờ"
+      x_minutes: "%{count} phút"
+      about_x_minutes: "%{count} phút"
+      less_than_x_minutes: "%{count} phút"
+  support:
+    array:
+      two_words_connector: ", "

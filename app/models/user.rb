@@ -8,19 +8,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :role_ids, :post_ids
   # attr_accessible :title, :body
-  has_many :posts
+  has_many :posts, :dependent => :destroy, :inverse_of => :user
   has_paper_trail
 
+  
 
   rails_admin do 
   	visible do
 	    # controller bindings is available here. Example:
 	    bindings[:controller].current_user.has_role? :admin
-	  end
+	  end    
   end
-  def to_s
+  def title
   	email
   end
 end

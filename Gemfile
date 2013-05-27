@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -47,3 +47,6 @@ gem "ckeditor"
 gem "bootstrap-wysihtml5-rails"
 gem 'paper_trail', '~> 2'
 gem 'bootstrap-editable-rails'
+gem 'apotomo', "~>1.2.2"
+gem 'will_paginate', '~> 3.0'
+gem "twitter-bootstrap-rails"

@@ -29,15 +29,16 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
     user ||= User.new
-    can :read, :all 
+    
     if user.has_role? :admin
-        can :manage, [User, Role]
+        can :manage, [User, Role, Post]
         can :access, :rails_admin
         can :dashboard                        
-    elsif user.has_role?(:manager, Post)
-        can :manage, Post
+    elsif user.has_role?(:manager, Post)        
+        
+        can :manage, Post, :user_id => user.id        
         can :access, :rails_admin
-        can :dashboard                        
+        can :dashboard                  
     end
     
   end
