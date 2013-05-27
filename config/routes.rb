@@ -1,9 +1,15 @@
 RolifyTut::Application.routes.draw do
-   root :to => 'home#index'
+  
+
+  root :to => 'home#index'
 
   devise_for :users
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
+  resources :posts do 
+    member do 
+      put 'update'
+    end
+  end
   
 
   # The priority is based upon order of creation:

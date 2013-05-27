@@ -1,1 +1,14 @@
-Hello
+
+<% if user_signed_in? %> 
+	<%= link_to "Sign out" ,destroy_user_session_path %>
+
+	<% if @posts.length > 0 %>
+	  <% @posts.each do |post| %>
+		<a href="#" id="username" data-type="text" data-resource="post" data-name="title" data-url="<%= post_path(post) %>" data-original-title="Enter Title"><%= post.title %></a>
+	  <% end %>
+	<% end %>
+
+
+<% else %>
+	<%= link_to "Sign in", new_user_session_path %>
+<% end %>
